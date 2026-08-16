@@ -4,11 +4,10 @@ import multer from "multer";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
-import reloadWebsite from "./relode.js"
+import axios from "axios"
 dotenv.config();
 
-const url = `https://ai-based-2d-plan-analyzer.onrender.com`;
-const interval = 100000;
+const url = `http://localhost:8000/check`;
 
 const app = express();
 
@@ -41,7 +40,18 @@ app.get("/",(req,res)=>{
   res.status(200).send("server is Running")
 })
 
-setInterval(reloadWebsite, interval);
+export default function reloadWebsite() {
+  axios
+    .get("http://localhost:8000/check")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, 30000);
 
 app.post("/api/check", upload.single("file"),analyzeLimiter, async (req, res) => {
 
@@ -129,6 +139,10 @@ res.json(result);
     res.status(500).json({ error: err.message });
   }
 });
+
+app.get("/check",(req,res)=>{
+  res.status(200).json({"helth":"good"})
+})
 
 app.listen(8000, () => {
   console.log("Server started");
