@@ -4,7 +4,11 @@ import multer from "multer";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
+import reloadWebsite from "./relode"
 dotenv.config();
+
+const url = `https://ai-based-2d-plan-analyzer.onrender.com`;
+const interval = 100000;
 
 const app = express();
 
@@ -32,6 +36,12 @@ const analyzeLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
 });
+
+app.get("/",(req,res)=>{
+  res.status(200).send("server is Running")
+})
+
+setInterval(reloadWebsite, interval);
 
 app.post("/api/check", upload.single("file"),analyzeLimiter, async (req, res) => {
 
