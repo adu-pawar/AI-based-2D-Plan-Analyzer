@@ -1,0 +1,238 @@
+.how-to-use {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 80px 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.how-header {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.how-header h2 {
+  margin: 0 0 12px;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.how-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+/* Step Card */
+
+.step {
+  display: flex;
+
+  gap: 18px;
+
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.04);
+
+  transition: 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Number */
+
+.step-number {
+  min-width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 17px;
+}
+
+
+/* Content */
+
+.step h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+
+  color: #111827;
+}
+
+.step p {
+  margin: 0;
+
+  line-height: 1.7;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   WARNING
+========================= */
+
+.how-warning {
+  margin-top: 35px;
+
+  padding: 20px 25px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  border-left: 5px solid #f97316;
+
+  border-radius: 12px;
+}
+
+.how-warning h3 {
+  margin: 0 0 8px;
+
+  color: #c2410c;
+
+  font-size: 17px;
+}
+
+.how-warning p {
+  margin: 0;
+
+  color: #7c2d12;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .how-to-use {
+    padding: 60px 20px;
+  }
+
+  .how-header h2 {
+    font-size: 30px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .how-to-use {
+    padding: 45px 15px;
+  }
+
+  .how-header {
+    margin-bottom: 30px;
+  }
+
+  .how-header h2 {
+    font-size: 26px;
+  }
+
+  .how-header p {
+    font-size: 14px;
+  }
+
+  .step {
+    padding: 18px;
+
+    gap: 14px;
+  }
+
+  .step-number {
+    min-width: 36px;
+    height: 36px;
+
+    font-size: 14px;
+  }
+
+  .step h3 {
+    font-size: 16px;
+  }
+
+  .step p {
+    font-size: 13px;
+  }
+
+  .how-warning {
+    padding: 16px;
+
+    border-left-width: 4px;
+  }
+
+  .how-warning h3 {
+    font-size: 15px;
+  }
+
+  .how-warning p {
+    font-size: 13px;
+  }
+}
