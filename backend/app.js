@@ -4,7 +4,7 @@ import multer from "multer";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
-import reloadWebsite from "./relode"
+import reloadWebsite from "./relode.js"
 dotenv.config();
 
 const url = `https://ai-based-2d-plan-analyzer.onrender.com`;
