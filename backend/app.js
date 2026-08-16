@@ -7,8 +7,6 @@ import rateLimit from "express-rate-limit";
 import axios from "axios"
 dotenv.config();
 
-const url = `http://localhost:8000/check`;
-
 const app = express();
 
 const ai = new GoogleGenAI({
@@ -42,7 +40,7 @@ app.get("/",(req,res)=>{
 
 export default function reloadWebsite() {
   axios
-    .get("http://localhost:8000/check")
+    .get("https://ai-based-2d-plan-analyzer.onrender.com/check")
     .then((response) => {
       console.log(response.data);
     })
