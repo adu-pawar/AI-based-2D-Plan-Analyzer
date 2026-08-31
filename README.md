@@ -1,4 +1,4 @@
-# CEP222 - Floor Plan Analysis
+# CEP - Floor Plan Analysis
 
 A simple two-part web application that analyzes residential floor plan PDFs using Google GenAI (Gemini) and returns a structured JSON analysis (architectural, safety, ventilation, Vastu, and improvement suggestions).
 
