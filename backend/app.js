@@ -51,7 +51,7 @@ export default function reloadWebsite() {
 
 setInterval(reloadWebsite, 30000);
 
-app.post("/api/check", upload.single("file"),analyzeLimiter, async (req, res) => {
+app.post("/api/check", upload.single("file"), async (req, res) => {
 
   try {
     const pdfBuffer = req.file.buffer;
