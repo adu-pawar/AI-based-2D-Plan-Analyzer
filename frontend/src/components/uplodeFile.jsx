@@ -29,7 +29,7 @@ export default function UploadFile() {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("https://ai-based-2d-plan-analyzer.onrender.com/api/check", formData);
+      const res = await axios.post("https://ai-based-2d-plan-analyzer.onrender.com/", formData);
 
       setApiData(res.data);
       setErr("");
